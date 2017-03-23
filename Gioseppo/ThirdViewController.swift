@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  ThirdViewController.swift
 //  Gioseppo
 //
 //  Created by Santiago Navarro Ruiz on 22/3/17.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ThirdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,9 +22,7 @@ class SecondViewController: UIViewController {
 
     convenience init() {
         //Calling the designated initializer of same class
-        self.init(nibName: "SecondViewController", bundle: nil)
+        self.init(nibName: "ThirdViewController", bundle: nil)
         //initializing the view Controller form specified NIB file
     }
-
 }
-

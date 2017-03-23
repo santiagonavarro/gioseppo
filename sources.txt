@@ -1,0 +1,13 @@
+http://app.gioseppo.com
+
+Login
+http://gioseppo.com/es-es/customer/account/login/
+
+Shop
+http://gioseppo.com/es-es/
+
+Campaign
+http://app.gioseppo.com/en/campanyas/?v=123456789
+
+Stores
+http://app.gioseppo.com/en/tiendas/

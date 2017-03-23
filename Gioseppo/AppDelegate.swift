@@ -12,10 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var first : FirstViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        
+        self.first = FirstViewController()
+        
+        self.window?.rootViewController = first
+        //setting the initial VieController as tabBarController
+        
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
