@@ -8,6 +8,34 @@ http://gioseppo.com/es-es/
 
 Campaign
 http://app.gioseppo.com/en/campanyas/?v=123456789
+http://gioseppo.com/es-es/campana
 
 Stores
 http://app.gioseppo.com/en/tiendas/
+http://gioseppo.com/es-es/puntos-de-venta-gioseppo
+
+Cosas: 
+
+Hemos cabiado varios ficheros de en/shops_. Creada la carpeta shops_ con algunos includes cambiados. 
+
+También dentro de data/shops_
+
+
+************* MORE *********
+//Quienes somos
+http://gioseppo.com/es-es/quienes-somos/
+
+//25 Aniversario
+http://gioseppo.com/es-es/veinticinco-aniversario
+
+//Social
+http://gioseppo.com/es-es/responsabilidad-social
+
+//Trabaja con nostros
+http://gioseppo.com/es-es/trabaja-con-nosotros
+
+//Aviso legal
+http://gioseppo.com/es-es/aviso-legal
+
+//Cuida tus Gioseppo
+http://gioseppo.com/es-es/care-tips

@@ -9,11 +9,11 @@
 import UIKit
 import SMWebView
 import CoreLocation
+import Spring
 
 class FirstViewController: UIViewController, UIWebViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var appWebView: SMWebView!
-    @IBOutlet weak var loading: UIActivityIndicatorView!
     
     private var locationManager = CLLocationManager()
     
@@ -40,19 +40,23 @@ class FirstViewController: UIViewController, UIWebViewDelegate, CLLocationManage
             .loadURL(URL(string: url)!)
             .didStartLoading { webView in
 //                print("Started loading \(webView.request?.url?.absoluteString)")
-                self.loading.startAnimating()
+//                self.loading.startAnimating()
+                self.view.showLoading()
             }
             .didFinishLoading { webView in
 //                print("Finished loading \(webView.request?.url?.absoluteString)")
-                self.loading.stopAnimating()
+//                self.loading.stopAnimating()
+                self.view.hideLoading()
             }
             .didFailLoading { webView, error in
 //                print("Failed loading \(error)")
-                self.loading.stopAnimating()
+//                self.loading.stopAnimating()
+                self.view.hideLoading()
             }
             .didCompleteLoading { webView in
 //                print("Finished loading entire webpage")
-                self.loading.stopAnimating()
+//                self.loading.stopAnimating()
+                self.view.hideLoading()
             }
             .shouldStartLoading { webView, request, type in
                 return true
@@ -76,11 +80,13 @@ class FirstViewController: UIViewController, UIWebViewDelegate, CLLocationManage
     }
     
     @IBAction func btnCampaign(_ sender: Any) {
-        self.loadWebViewWithURL(url: "http://app.gioseppo.com/en/campanyas/?v=123456789")
+//        self.loadWebViewWithURL(url: "http://app.gioseppo.com/en/campanyas/?v=123456789")
+        self.loadWebViewWithURL(url: "http://gioseppo.com/es-es/campana")
     }
     
     @IBAction func btnLocationTapped(_ sender: Any) {
-        self.loadWebViewWithURL(url: "http://app.gioseppo.com/en/shops_/")
+//        self.loadWebViewWithURL(url: "http://app.gioseppo.com/en/shops_/")
+        self.loadWebViewWithURL(url: "http://gioseppo.com/es-es/puntos-de-venta-gioseppo")
     }
     
     

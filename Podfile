@@ -15,6 +15,8 @@ target "Gioseppo" do
     pod 'SMWebView'
     pod 'PubNub'#, '3.7.2'
     
+    pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+    
     #    pod 'Fabric'
     #    pod 'Crashlytics'
 

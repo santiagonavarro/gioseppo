@@ -1,20 +1,33 @@
 PODS:
   - Alamofire (4.4.0)
-  - PubNub (4.6.0):
-    - PubNub/Core (= 4.6.0)
-  - PubNub/Core (4.6.0)
+  - PubNub (4.6.1):
+    - PubNub/Core (= 4.6.1)
+  - PubNub/Core (4.6.1)
   - SMWebView (1.0)
+  - Spring (1.0.3)
 
 DEPENDENCIES:
   - Alamofire
   - PubNub
   - SMWebView
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
+
+EXTERNAL SOURCES:
+  Spring:
+    :branch: swift3
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 8201b5c93bd7ebdf4cd18160bcde1e6e88c2be64
+    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  PubNub: 57bb55c3ac16ff1bbe913f4189e97e67969b308a
+  PubNub: 408ba6402a9c712418da738adda12ccc339cbb1e
   SMWebView: 603d4c80f255c75f03a58570f815c5dbdc37bcd1
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-PODFILE CHECKSUM: 2e3159a63e49dfa7908c6e60fa841a7ba488b453
+PODFILE CHECKSUM: b09ab217254ac578d3eaf4efc46bed55a36efe8c
 
 COCOAPODS: 1.2.0
