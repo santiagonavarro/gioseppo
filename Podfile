@@ -13,6 +13,7 @@ target "Gioseppo" do
     # Libs externas
     pod 'Alamofire'
     pod 'SMWebView'
+    pod 'PubNub'#, '3.7.2'
     
     #    pod 'Fabric'
     #    pod 'Crashlytics'

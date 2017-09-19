@@ -8,11 +8,14 @@
 
 import UIKit
 import SMWebView
+import CoreLocation
 
-class FirstViewController: UIViewController, UIWebViewDelegate {
+class FirstViewController: UIViewController, UIWebViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var appWebView: SMWebView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
+    
+    private var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,25 +27,31 @@ class FirstViewController: UIViewController, UIWebViewDelegate {
         
         self.loadWebViewWithURL(url: "http://app.gioseppo.com")
         appWebView.scrollView.bounces = false
+        
+        self.locationManager.delegate = self
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.startUpdatingLocation()
     }
     
     func loadWebViewWithURL(url: String){
         appWebView
             .loadURL(URL(string: url)!)
             .didStartLoading { webView in
-                print("Started loading \(webView.request?.url?.absoluteString)")
+//                print("Started loading \(webView.request?.url?.absoluteString)")
                 self.loading.startAnimating()
             }
             .didFinishLoading { webView in
-                print("Finished loading \(webView.request?.url?.absoluteString)")
+//                print("Finished loading \(webView.request?.url?.absoluteString)")
                 self.loading.stopAnimating()
             }
             .didFailLoading { webView, error in
-                print("Failed loading \(error)")
+//                print("Failed loading \(error)")
                 self.loading.stopAnimating()
             }
             .didCompleteLoading { webView in
-                print("Finished loading entire webpage")
+//                print("Finished loading entire webpage")
                 self.loading.stopAnimating()
             }
             .shouldStartLoading { webView, request, type in
@@ -71,7 +80,7 @@ class FirstViewController: UIViewController, UIWebViewDelegate {
     }
     
     @IBAction func btnLocationTapped(_ sender: Any) {
-        self.loadWebViewWithURL(url: "http://app.gioseppo.com/en/tiendas/")
+        self.loadWebViewWithURL(url: "http://app.gioseppo.com/en/shops_/")
     }
     
     
@@ -86,5 +95,22 @@ class FirstViewController: UIViewController, UIWebViewDelegate {
         //initializing the view Controller form specified NIB file
     }
 
+    //MARK: Location delegate mthods
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("didFailWithError: \(error.localizedDescription)")
+        let errorAlert = UIAlertView(title: "Error", message: "Failed to Get Your Location", delegate: nil, cancelButtonTitle: "Ok")
+        errorAlert.show()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let newLocation = locations.last!
+        print("current position: \(newLocation.coordinate.longitude) , \(newLocation.coordinate.latitude)")
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        let newLocation = locations.last as! CLLocation
+        print("current position: \(newLocation.coordinate.longitude) , \(newLocation.coordinate.latitude)")
+    }
 }
 
